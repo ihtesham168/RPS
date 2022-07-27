@@ -7,11 +7,7 @@ import time
 
 #Rock, Paper, Scissors, class
 class Rps:
-
-    
-
-
-    
+ 
     def __init__(self):
         self.model = load_model("keras_model.h5")
 
@@ -53,8 +49,6 @@ class Rps:
         max_index = np.argmax(prediction[0])
         return max_index
    
-        
-
     def get_user_choice(self):
         max_index = self.get_prediction()
         if max_index == 0:
@@ -67,10 +61,7 @@ class Rps:
             user_choice = "Nothing"
 
         return user_choice
-
-
-
-       
+   
     def get_winner(self):
 
         user_selection = self.get_user_choice()
@@ -99,17 +90,12 @@ class Rps:
         else:
             self.computer_score += 1
             return "Computer won"
-
-
         
-
+        
     def play(self):
         while self.computer_score <3 and self.user_score <3:
         
             self.get_winner()        
-            
-
-
            # print(f"Computer choice : {comp_selection}   User choice : {user_selection}")
             #print (game.get_winner())
             print (f"Scores : Computer - {self.computer_score}    User - {self.user_score}")
